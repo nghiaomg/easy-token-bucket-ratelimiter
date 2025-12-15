@@ -20,12 +20,12 @@ This keeps traffic within a steady envelope while still allowing short bursts.
 
 ## Installation
 ```bash
-npm install token-bucket-ratelimiter
+npm install easy-token-bucket-ratelimiter
 ```
 
 ## Quick Start
 ```ts
-import { TokenBucket } from 'token-bucket-ratelimiter';
+import { TokenBucket } from 'easy-token-bucket-ratelimiter';
 
 // Allow bursts of up to 10 requests, refilling 5 tokens per second
 const limiter = new TokenBucket({ capacity: 10, refillRate: 5 });
@@ -70,7 +70,7 @@ try {
 ### `TokenBucketManager`
 Simple helper to manage many buckets (e.g., per user/route) with optional TTL and hooks:
 ```ts
-import { TokenBucketManager, TokenBucket } from 'token-bucket-ratelimiter';
+import { TokenBucketManager, TokenBucket } from 'easy-token-bucket-ratelimiter';
 
 const manager = new TokenBucketManager({
   createBucket: () => new TokenBucket({ capacity: 10, refillRate: 5 }),
@@ -91,7 +91,7 @@ You can also call `manager.cleanup()` to eagerly drop expired buckets if you wan
 Use Redis for atomic, multi-instance limits. Requires a Redis client that supports `eval` (and optionally `evalsha`, e.g., `ioredis` or `ioredis` Cluster):
 ```ts
 import Redis from 'ioredis';
-import { RedisTokenBucket } from 'token-bucket-ratelimiter';
+import { RedisTokenBucket } from 'easy-token-bucket-ratelimiter';
 
 const redis = new Redis();
 const bucket = new RedisTokenBucket({
@@ -123,7 +123,7 @@ Notes:
 99% of users plug rate limiting into a web framework. A lightweight Express-compatible middleware is provided:
 ```ts
 import express from 'express';
-import { createExpressRateLimiter } from 'token-bucket-ratelimiter';
+import { createExpressRateLimiter } from 'easy-token-bucket-ratelimiter';
 
 const app = express();
 const rateLimiter = createExpressRateLimiter({

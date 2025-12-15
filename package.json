@@ -1,5 +1,5 @@
 {
-  "name": "ts-token-bucket-limiter",
+  "name": "easy-token-bucket-ratelimiter",
   "version": "1.0.0",
   "description": "A simple and efficient Token Bucket rate limiter in TypeScript",
   "main": "dist/index.js",
@@ -24,12 +24,12 @@
   "type": "commonjs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nghiaomg/token-bucket-ratelimiter.git"
+    "url": "git+https://github.com/nghiaomg/easy-token-bucket-ratelimiter.git"
   },
   "bugs": {
-    "url": "https://github.com/nghiaomg/token-bucket-ratelimiter/issues"
+    "url": "https://github.com/nghiaomg/easy-token-bucket-ratelimiter/issues"
   },
-  "homepage": "https://github.com/nghiaomg/token-bucket-ratelimiter#readme",
+  "homepage": "https://github.com/nghiaomg/easy-token-bucket-ratelimiter#readme",
   "devDependencies": {
     "@types/node": "^25.0.2",
     "tslib": "^2.8.1",
